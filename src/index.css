@@ -1,0 +1,239 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.25s ease-out forwards;
+  }
+}
+
+/* Container and base styles */
+.dashboard-container {
+  min-height: 100vh;
+  padding: 2rem;
+  max-width: 1120px;
+  margin: 0 auto;
+  background-color: #0e0e17;
+  color: #f5f5f7;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dashboard-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #f5f5f7;
+}
+
+/* Stats Cards Container */
+.stats-cards-container {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.stats-card {
+  background: #1c1c28;
+  border-radius: 16px;
+  padding: 1.8rem 2rem;
+  width: 260px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  gap: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-items: center;
+  color: #f5f5f7;
+}
+
+.stats-card:hover {
+  background: #272734;
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+}
+
+/* Icon wrapper and icon colors */
+.icon-wrapper {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+}
+
+.icon-income {
+  background: linear-gradient(135deg, #00c49f, #00b388);
+  color: #e0f7f2;
+  box-shadow: 0 0 20px #00c49f;
+}
+
+.icon-expense {
+  background: linear-gradient(135deg, #ff8042, #e67321);
+  color: #fff1e6;
+  box-shadow: 0 0 20px #ff8042;
+}
+
+.icon-balance {
+  background: linear-gradient(135deg, #6c757d, #495057);
+  color: #ced4da;
+  box-shadow: 0 0 20px #6c757d;
+}
+
+.stats-card:hover .icon-wrapper {
+  transform: scale(1.2);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
+}
+
+/* Text styles */
+.stats-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.stats-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* Charts Grid */
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 2rem;
+  padding-bottom: 2rem;
+}
+
+.recent-tr{
+  background: #1c1c28;
+  border-radius: 16px;
+  padding: 1.8rem 1.5rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.35);
+  color: #f5f5f7;
+
+}
+
+.chart-card {
+  background: #1c1c28;
+  border-radius: 16px;
+  padding: 1.8rem 1.5rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.35);
+  color: #f5f5f7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chart-title {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+/* Pie Chart label */
+.pie-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  pointer-events: none;
+}
+
+/* Pie slices hover effect */
+.pie-cell {
+  transition: transform 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+}
+
+.pie-cell:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.7));
+}
+
+/* Bar chart bars hover effect */
+.bar-income:hover {
+  filter: drop-shadow(0 0 10px #00c49f);
+  cursor: pointer;
+}
+
+.bar-expense:hover {
+  filter: drop-shadow(0 0 10px #ff8042);
+  cursor: pointer;
+}
+
+/* Tooltip styles */
+.tooltip {
+  background: #22222e;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.15);
+  font-size: 0.85rem;
+  color: #f5f5f7;
+  user-select: none;
+}
+
+.tooltip-title {
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease forwards;
+}
+
+.animate-fadeUp {
+  animation: fadeUp 1.2s ease forwards;
+}
+
+.stats-card:hover .icon-wrapper {
+  animation: pulse 1.5s infinite;
+}
+

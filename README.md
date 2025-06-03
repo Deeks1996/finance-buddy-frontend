@@ -75,7 +75,7 @@ All analytics are reactive and auto-update with new entries.
 ## 🌐 Live Application
 
 - Frontend: https://finance-buddy-frontend.vercel.app/
-- Backend: https://finance-buddy-backend-production-af41.up.railway.app/
+- Backend: https://finance-buddy-backend-production-8e3c.up.railway.app/
 ---
 
 ## Author
